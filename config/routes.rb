@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :logins
+  devise_for :users
   get '/messages', to: 'message#index'
   get '/profile', to: 'profile#index'
   get '/post-list', to: 'post_list#index'
