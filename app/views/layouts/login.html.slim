@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Instagram
+    meta content="width=device-width,initial-scale=1" name="viewport" /
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+    style
+      css:
+          | * {
+          | margin: 0;
+          | padding: 0;
+          |
+          }
+
+          .instagram-logo {
+          | background-position: 0 - 130 px;
+          | height: 51 px;
+          | width: 175 px;
+          | background-image: url(https://bit.ly/3v2LT17);
+          |
+          }
+
+          .facebook-logo {
+          | background-position: - 414 px - 259 px;
+          | background-image: url(https://bit.ly/3v2LT17);
+          | height: 16 px;
+          | width: 16 px;
+          |
+          }
+
+          .apple-store-logo {
+          | background-position: - 132 px - 182 px;
+          | height: 42 px;
+          | width: 128 px;
+          | background-image: url(https://bit.ly/3v2LT17);
+          |
+          }
+
+          .google-store-logo {
+          | background-position: 0 - 182 px;
+          | height: 42 px;
+          | width: 130 px;
+          | background-image: url(https://bit.ly/3v2LT17);
+          |
+          }
+
+  body
+    main
+
+      = yield

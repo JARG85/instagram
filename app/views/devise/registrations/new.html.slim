@@ -1,0 +1,42 @@
+.h-screen.bg-gray-50.flex.flex-col.justify-center.items-center
+  .bg-white.border.border-gray-300.w-80.py-8.flex.items-center.flex-col.mb-3
+    h1.bg-no-repeat.instagram-logo
+    h1 Instagram
+
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      -f.options[:html][:class] = 'mt-8 w-64 flex flex-col'
+      .field
+
+        = f.text_field :name, autofocus: true, autocomplete: "name", class: 'text-xs w-full mb-2 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none', placeholder: "Name"
+      .field
+
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-xs w-full mb-2 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none', placeholder: "Email"
+      .field
+        = f.password_field :password, autocomplete: "new-password", class: 'text-xs w-full mb-2 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none', placeholder: "Password"
+      .field
+
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text-xs w-full mb-2 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none', placeholder: "Password confirmation"
+
+      .field
+        .dropzone.dropzone-default.dz-clickable data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1"
+          = f.file_field :avatar
+
+      a.text-sm.text-center.bg-blue-300.text-white.py-1.rounded.font-medium
+        .actions
+          = f.submit "Sign up"
+    .flex.justify-evenly.space-x-2.w-64.mt-4
+      span.bg-gray-300.h-px.flex-grow.t-2.relative.top-2
+      span.flex-none.uppercase.text-xs.text-gray-400.font-semibold or
+      span.bg-gray-300.h-px.flex-grow.t-2.relative.top-2
+    button.mt-4.flex
+      .bg-no-repeat.facebook-logo.mr-1
+      span.text-xs.text-blue-900.font-semibold Log in with Facebook
+  .bg-white.border.border-gray-300.text-center.w-80.py-4
+    span.text-sm Do you have an account?
+    a.text-blue-500.text-sm.font-semibold href="/users/sign_in" Log in
+  .mt-3.text-center
+    span.text-xs Get the app
+    .flex.mt-3.space-x-2
+      .bg-no-repeat.apple-store-logo
+      .bg-no-repeat.google-store-logo
