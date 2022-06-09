@@ -17,6 +17,11 @@
       .field
 
         = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text-xs w-full mb-2 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none', placeholder: "Password confirmation"
+
+      .field
+        .dropzone.dropzone-default.dz-clickable data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1"
+          = f.file_field :avatar
+
       a.text-sm.text-center.bg-blue-300.text-white.py-1.rounded.font-medium
         .actions
           = f.submit "Sign up"
